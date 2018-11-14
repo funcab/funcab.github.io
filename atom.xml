@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://funcab.github.io/"/>
-  <updated>2018-11-14T17:09:56.944Z</updated>
+  <updated>2018-11-14T17:23:59.155Z</updated>
   <id>http://funcab.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>leetcode 92 反转链表</title>
+    <link href="http://funcab.github.io/2018/11/15/leetcode-92-1/"/>
+    <id>http://funcab.github.io/2018/11/15/leetcode-92-1/</id>
+    <published>2018-11-14T17:22:58.000Z</published>
+    <updated>2018-11-14T17:23:59.155Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="反转链表II"><a href="#反转链表II" class="headerlink" title="反转链表II"></a>反转链表II</h3><p>首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次节点。<br>简而言之，介于[m,n]间的单次循环要完成两项任务：1. 设置temp 2. 完成cur.next = pre。<br><a href="https://leetcode.com/problems/reverse-linked-list-ii/discuss/184849/Python-Solution-20ms-beats-100?from=singlemessage&amp;isappinstalled=0" target="_blank" rel="noopener">代码来源</a><br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python3</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseBetween</span><span class="params">(self, head, m, n)</span>:</span></span><br><span class="line">        cur = head</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        back = tail = front = pre = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> m &lt;= i &lt;= n:</span><br><span class="line">                tmp = cur.next <span class="comment">#task 1</span></span><br><span class="line">                <span class="keyword">if</span> pre <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                    tail = cur <span class="comment">#record m</span></span><br><span class="line">                cur.next = pre <span class="comment">#task 2</span></span><br><span class="line">                pre = cur</span><br><span class="line">                cur = tmp</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i == m<span class="number">-1</span>:</span><br><span class="line">                    front = cur <span class="comment">#record m-1</span></span><br><span class="line">                <span class="keyword">elif</span> i == n+<span class="number">1</span>:</span><br><span class="line">                    back = cur</span><br><span class="line">                cur = cur.next <span class="comment"># !!move to the next!!</span></span><br><span class="line">        <span class="keyword">if</span> front:</span><br><span class="line">            front.next = pre</span><br><span class="line">            res = head</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = pre</span><br><span class="line">        tail.next = back</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;反转链表II&quot;&gt;&lt;a href=&quot;#反转链表II&quot; class=&quot;headerlink&quot; title=&quot;反转链表II&quot;&gt;&lt;/a&gt;反转链表II&lt;/h3&gt;&lt;p&gt;首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次节点。&lt;br&gt;简而言之，介于[m,n]间的单次循环要完成两项任务：1. 设置temp 2. 完成cur.next = pre。&lt;br&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-linked-list-ii/discuss/184849/Python-Solution-20ms-beats-100?from=singlemessage&amp;amp;isappinstalled=0&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;代码来源&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://funcab.github.io/categories/leetcode/"/>
+    
+    
+      <category term="leetcode" scheme="http://funcab.github.io/tags/leetcode/"/>
+    
+      <category term="medium" scheme="http://funcab.github.io/tags/medium/"/>
+    
+      <category term="链表" scheme="http://funcab.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>leetcode 92 反转链表</title>
