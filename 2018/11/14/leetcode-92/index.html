@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="leetcode,medium,链表,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="Something about python">
-<meta name="keywords" content="Better later than never.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Neverland">
-<meta property="og:url" content="http://funcab.github.io/index.html">
+<meta name="description" content="反转链表II首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次">
+<meta name="keywords" content="leetcode,medium,链表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 92 反转链表">
+<meta property="og:url" content="http://funcab.github.io/2018/11/14/leetcode-92/index.html">
 <meta property="og:site_name" content="Neverland">
-<meta property="og:description" content="Something about python">
+<meta property="og:description" content="反转链表II首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-14T17:09:56.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neverland">
-<meta name="twitter:description" content="Something about python">
+<meta name="twitter:title" content="leetcode 92 反转链表">
+<meta name="twitter:description" content="反转链表II首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://funcab.github.io/">
+  <link rel="canonical" href="http://funcab.github.io/2018/11/14/leetcode-92/">
 
 
 
 
 
-  <title>Neverland - Pythoner</title>
+  <title>leetcode 92 反转链表 | Neverland</title>
   
 
 
@@ -146,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -250,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -282,9 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/14/leetcode-92/" itemprop="url">leetcode 92 反转链表</a></h1>
+          <h1 class="post-title" itemprop="name headline">leetcode 92 反转链表</h1>
         
 
         <div class="post-meta">
@@ -356,165 +354,8 @@
       
 
       
-        
-          <h3 id="反转链表II"><a href="#反转链表II" class="headerlink" title="反转链表II"></a>反转链表II</h3><p>首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次节点。<br>简而言之，介于[m,n]间的单次循环要完成两项任务：1. 设置temp 2. 完成cur.next = pre。<br><a href="https://leetcode.com/problems/reverse-linked-list-ii/discuss/184849/Python-Solution-20ms-beats-100?from=singlemessage&amp;isappinstalled=0" target="_blank" rel="noopener">代码来源</a><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/14/leetcode-92/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
+        <h3 id="反转链表II"><a href="#反转链表II" class="headerlink" title="反转链表II"></a>反转链表II</h3><p>首先记录m-1的节点(front)，然后依次倒置[m,n]之间的节点，期间还要注意m节点的收藏(tail)，用来设置tail.next=back，然后记录n+1(back)节点，最后完成n+1，m-1连接。由于倒置是通过不停的选择next节点来完成，为了防止陷入死循环，本次节点(cur)与本次节点next节点(temp)的关系倒置要放到下一次循环中处理，这就需要我们引入pre来记录本次节点。<br>简而言之，介于[m,n]间的单次循环要完成两项任务：1. 设置temp 2. 完成cur.next = pre。<br><a href="https://leetcode.com/problems/reverse-linked-list-ii/discuss/184849/Python-Solution-20ms-beats-100?from=singlemessage&amp;isappinstalled=0" target="_blank" rel="noopener">代码来源</a><br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python3</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseBetween</span><span class="params">(self, head, m, n)</span>:</span></span><br><span class="line">        cur = head</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        back = tail = front = pre = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> m &lt;= i &lt;= n:</span><br><span class="line">                tmp = cur.next <span class="comment">#task 1</span></span><br><span class="line">                <span class="keyword">if</span> pre <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">                    tail = cur <span class="comment">#record m</span></span><br><span class="line">                cur.next = pre <span class="comment">#task 2</span></span><br><span class="line">                pre = cur</span><br><span class="line">                cur = tmp</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> i == m<span class="number">-1</span>:</span><br><span class="line">                    front = cur <span class="comment">#record m-1</span></span><br><span class="line">                <span class="keyword">elif</span> i == n+<span class="number">1</span>:</span><br><span class="line">                    back = cur</span><br><span class="line">                cur = cur.next <span class="comment"># !!move to the next!!</span></span><br><span class="line">        <span class="keyword">if</span> front:</span><br><span class="line">            front.next = pre</span><br><span class="line">            res = head</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = pre</span><br><span class="line">        tail.next = back</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://funcab.github.io/2018/11/13/Hexo部署到github-io搭建NexT主题博客/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="He Xuan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Neverland">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/13/Hexo部署到github-io搭建NexT主题博客/" itemprop="url">Hexo部署到github.io搭建NexT主题博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T20:30:55+08:00">
-                2018-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="install-git"><a href="#install-git" class="headerlink" title="install git"></a><a href="https://github.com/funcab/notes/blob/master/git/usage.md" target="_blank" rel="noopener">install git</a></h2><h2 id="install-Node-js"><a href="#install-Node-js" class="headerlink" title="install Node.js"></a>install Node.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://raw.github.com/creationix/nvm/v0.33.11/install.sh | sh</span><br></pre></td></tr></table></figure>
-<p>Close and reopen your terminal to start using nvm or run the following to use it now:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</span><br><span class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install stable</span><br></pre></td></tr></table></figure>
-<h2 id="install-Hexo-and-init"><a href="#install-Hexo-and-init" class="headerlink" title="install Hexo and init"></a>install Hexo and init</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">mkdir &lt;folder&gt;</span><br><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/13/Hexo部署到github-io搭建NexT主题博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
@@ -524,19 +365,74 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="He Xuan 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="He Xuan 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/medium/" rel="tag"># medium</a>
+          
+            <a href="/tags/链表/" rel="tag"># 链表</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/13/Hexo部署到github-io搭建NexT主题博客/" rel="next" title="Hexo部署到github.io搭建NexT主题博客">
+                <i class="fa fa-chevron-left"></i> Hexo部署到github.io搭建NexT主题博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -546,10 +442,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +454,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -577,8 +478,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -681,6 +591,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#反转链表II"><span class="nav-number">1.</span> <span class="nav-text">反转链表II</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +740,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
